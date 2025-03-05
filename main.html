@@ -4,164 +4,205 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Product Page</title>
+	<title></title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/styles.css">
 	<style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #00C853;
-        }
+		@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+	</style>
+	<style>
 
-        .product__container {
-            display: flex;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
+		*{
+			margin:0;
+			padding:0;
+			box-sizing:border-box;
+			font-family: "Raleway", sans-serif;
+		    font-optical-sizing: auto;
+		    font-weight: <weight>;
+		    font-style: normal;
+		}
 
-        .product__photo {
-            flex: 1;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: #E8F5E9;
-            padding: 20px;
-        }
+		.product{
+			display:flex;
+			width:550px;
+			height:550px;
+			background-color:white;
+			border-radius:6px;
+			margin:auto;
+			margin-top:90px;
+		}
 
-        .photo-container {
-            position: relative;
-        }
+		.controls{
+			display:flex;
+			justify-content:space-between;
+			padding:10px;
+		}
+		
+		.controls i{
+			color:white;
+			font-size:20px;
+		}
 
-        .photo-main img {
-            width: 250px;
-            border-radius: 10px;
-        }
+		.product__photo{
+			background-color: white;
+			box-shadow:0px 5px 20px;
+			border-radius:7px;
+			height:80%;
+			position:relative;
+			left:-35px;
+			top:45px;
+		}
 
-        .photo-album {
-            margin-top: 15px;
-        }
+		.photo-main{
+			width:270px;
+			height:350px;
+			background-color: #73D308;
+			border-radius:7px;
+			margin-bottom:20px;
+		}
 
-        .photo-album ul {
-            display: flex;
-            gap: 10px;
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
+		.photo-main img{
+			background-color:transparent;
+			width:250px;
+			position:relative;
+			left:-50px;
+			top:10px;
+		}
 
-        .photo-album ul li img {
-            width: 50px;
-            height: 50px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            cursor: pointer;
-        }
+		.photo-alum{
+			display:flex;
+			align-items:center;
+		}
 
-        .product__details {
-            flex: 1;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+		.photo-album ul{
+			display:flex;
+			justify-content:center;
+		}
 
-        .product__details h1 {
-            font-size: 24px;
-            margin: 0;
-        }
+		.photo-album ul li{
+			border:1px solid gray;	
+			margin-right:2px;
+		}
 
-        .price {
-            font-size: 28px;
-            color: #E53935;
-        }
+		.photo-album ul li img{
+			width:40px;
+		}
 
-        .variant {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+		.variant ul{
+			display:flex;
+			justify-content:center;
+			align-items:center;
+		}
 
-        .variant img {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            border: 1px solid #ccc;
-            cursor: pointer;
-        }
+		.product__info{
+			padding:50px 15px 50px 0px;
+			display:flex;
+			flex-direction:column;
+			justify-content:space-around;
+		}
 
-        .description {
-            font-size: 14px;
-            color: #4CAF50;
-        }
+		.variant ul li img{
+			width:35px;
+			margin:5px;
+		}
 
-        .add-to-cart {
-            padding: 10px 20px;
-            background-color: #E53935;
-            color: #fff;
-            text-align: center;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
+		.variant ul li, .photo-album ul li{
+			list-style-type:none;
+			cursor:pointer;
+		}
 
-        .add-to-cart:hover {
-            background-color: #C62828;
-        }
-    </style>
+		.price{
+			color:#FE3F40
+		}
+
+		.price span{
+			font-size:60px;
+			margin-left:8px;
+		}
+
+		.benefits{
+			margin-left: 50px;
+		}
+
+		.benefits li{
+			font-size:12px;
+		}
+
+		.addBtn{
+			color:white;
+			background-color:#FE3F40;
+			padding:15px 25px;
+			border:none;
+			border-radius:5px;
+			font-size:11px;
+			font-weight:bolder;
+			margin-top:20px;
+			cursor:pointer;
+		}
+	</style>
 </head>
 
-<body>
-	<div class="product__container">
-        <div class="product__photo">
-            <div class="photo-container">
-                <div class="photo-main">
-                    <img src="green-apple.jpg" alt="Green Apple">
-                </div>
-                <div class="photo-album variant">
-                    <ul>
-                        <li><img src="green-apple.jpg" alt="Green Apple"></li>
-                        <li><img src="yellow-apple.jpg" alt="Yellow Apple"></li>
-                        <li><img src="orange-apple.jpg" alt="Orange Apple"></li>
-                        <li><img src="red-apple.jpg" alt="Red Apple"></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="product__details">
-            <h1>Delicious Apples</h1>
-            <p>CODE: 49999</p>
-            <div class="price">R$ 7.93</div>
-            <div class="variant">
-                <p>SELECT A COLOR:</p>
-                <img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png" alt="Green Apple">
-                <img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302752/codepen/delicious-apples/yellow-apple.png" alt="Yellow Apple">
-                <img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302427/codepen/delicious-apples/orange-apple.png" alt="Orange Apple">
-                <img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302285/codepen/delicious-apples/red-apple.png" alt="Red Apple">
-            </div>
-            <div class="description">
-                <h3>BENEFITS</h3>
-                <ul>
-                    <li>Apples are nutritious</li>
-                    <li>Apples may be good for weight loss</li>
-                    <li>Apples may be good for bone health</li>
-                    <li>They're linked to a lower risk of diabetes</li>
-                </ul>
-            </div>
-            <button class="add-to-cart">ADD TO CART</button>
-        </div>
-    </div>
+<body style="background-color:#10E37F">
+	<section class="product">
+		<div class="product__photo">
+			<div class="photo-container">
+				<div class="photo-main">
+					<div class="controls">
+						<i class="fa fa-share-alt"/></i>
+						<i class="fa fa-heart-o"></i>
+					</div>
+					<img src="https://res.cloudinary.com/john-mantas/image/upload/v1537291846/codepen/delicious-apples/green-apple-with-slice.png"
+						alt="green apple slice">
+				</div>
+				<div class="photo-album">
+					<ul>
+						<li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png"
+								alt="green apple"></li>
+						<li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537303532/codepen/delicious-apples/half-apple.png"
+								alt="half apple"></li>
+						<li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537303160/codepen/delicious-apples/green-apple-flipped.png"
+								alt="green apple"></li>
+						<li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537303708/codepen/delicious-apples/apple-top.png"
+								alt="apple top"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="product__info">
+			<div class="title">
+				<h1>Delicious Apples</h1>
+				<span style="font-size:10px; color:gray;">CODE: 45999</span>
+			</div>
+			<div class="price">
+				R$ <span>7.93</span>
+			</div>
+			<div class="variant">
+				<h3 style="color:gray;font-size:13px; margin-bottom:15px;">SELECT A COLOR</h3>
+				<ul>
+					<li><img style="border:1px solid gray" src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png"
+							alt="green apple"></li>
+					<li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302752/codepen/delicious-apples/yellow-apple.png"
+							alt="yellow apple"></li>
+					<li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302427/codepen/delicious-apples/orange-apple.png"
+							alt="orange apple"></li>
+					<li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302285/codepen/delicious-apples/red-apple.png"
+							alt="red apple"></li>
+				</ul>
+			</div>
+			<div class="description">
+				<h3 style="color:gray; font-size:13px; margin-bottom:15px;">BENEFITS</h3>
+				<ul class="benefits">
+					<li>Apples are nutricious</li>
+					<li>Apples may be good for weight loss</li>
+					<li>Apples may be good for bone health</li>
+					<li>They're linked to a lowest risk of diabeties</li>
+				</ul>
+				<button class="addBtn">ADD TO CART</button>
+			</div>
+		</div>
+	</section>
 </body>
+
 </html>
